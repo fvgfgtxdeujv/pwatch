@@ -67,7 +67,8 @@ impl PerfMap {
                 &perf_fd,
                 0,
             )
-        }?.as_ptr() as usize;
+        }?
+            .as_ptr() as usize;
         let mmap_page_metadata = unsafe {
             (mmap_addr as *mut sys::bindings::perf_event_mmap_page)
                 .as_mut()
